@@ -10,14 +10,18 @@ variable "prefix" {
     default     =   "dryrun"
 }
 
-variable "tags" {
+variable "author" {
     description =   "Resouce tags"
-    type        =   map(string)
-    default     =   {
-        "author"        =   "Rajesh"
-        "deployed_with" =   "Terraform"
-    }
+    type        =   string
+    default     =   "Rajesh"
 }
+
+variable "deployed_with" {
+    description =   "Resouce tags"
+    type        =   string
+    default     =   "Terraform"
+}
+
 
 # Resource Group
 
