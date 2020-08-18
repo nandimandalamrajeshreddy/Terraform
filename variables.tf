@@ -65,8 +65,8 @@ variable "subnet_address_range" {
 
 variable "allocation_method" {
     description =   "Allocation method for Public IP Address and NIC Private ip address"
-    type        =   list(string)
-    default     =   ["Static", "Dynamic"]
+    type        =   string
+    default     =   "Dynamic"
 }
 
 
