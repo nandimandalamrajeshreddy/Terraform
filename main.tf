@@ -24,7 +24,7 @@ provider "azurerm" {
 resource "azurerm_resource_group" "rg" {
     name                  =   "${var.prefix}-rg"
     location              =   var.location
-    tags                  =   var.tags
+    tags                  =   var.author
 }
 
 
@@ -61,7 +61,7 @@ resource "azurerm_virtual_network" "vnet" {
     resource_group_name   =   azurerm_resource_group.rg.name
     location              =   azurerm_resource_group.rg.location
     address_space         =   [var.vnet_address_range]
-    tags                  =   var.tags
+    tags                  =   var.author
 }
 
 #
@@ -83,7 +83,7 @@ resource "azurerm_network_security_group" "nsg" {
     name                        =       "${var.prefix}-web-nsg"
     resource_group_name         =       azurerm_resource_group.rg.name
     location                    =       azurerm_resource_group.rg.location
-    tags                        =       var.tags
+    tags                        =       var.author
 
     security_rule {
     name                        =       "Allow_SSH"
@@ -119,7 +119,7 @@ resource "azurerm_public_ip" "pip" {
     resource_group_name             =     azurerm_resource_group.rg.name
     location                        =     azurerm_resource_group.rg.location
     allocation_method               =     var.allocation_method[0]
-    tags                            =     var.tags
+    tags                            =     var.author
 }
 
 
@@ -197,6 +197,6 @@ resource "azurerm_linux_virtual_machine" "vm" {
         version                       =   var.vm_image_version
     }
 
-    tags                              =   var.tags
+    tags                              =   var.author
 
 }
