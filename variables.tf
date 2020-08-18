@@ -76,15 +76,23 @@ variable "saCount" {
     default     =   2
 }
 
-variable "saVars" {
+variable "account_tier" {
     description  =  "Variables for Storage accounts and containers"
-    type         =  map(string)
-    default      =  {
-        "account_tier"                  =    "Standard"
-        "account_replication_type"      =    "LRS"
-    }
+    type         =  string
+    default      =  "Standard"
+       
 }
 
+
+    
+variable "account_replication_type" {
+    description  =  "Variables for Storage accounts and containers"
+    type         =  string
+    default      =  "LRS"
+      
+}
+
+    
 
 
 
