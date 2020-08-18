@@ -70,7 +70,7 @@ resource "azurerm_subnet" "sn" {
     name                  =   "${var.prefix}-sn-subnet"
     resource_group_name   =   azurerm_resource_group.rg.name
     virtual_network_name  =   azurerm_virtual_network.vnet.name
-    address_prefixes      =   var.subnet_address_range
+    address_prefixes      =   [var.subnet_address_range["Web-Subnet"]]
 }
 
 #
