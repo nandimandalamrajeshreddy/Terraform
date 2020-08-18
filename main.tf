@@ -6,7 +6,7 @@ provider "azurerm" {
   # Whilst version is optional, we /strongly recommend/ using it to pin the version of the Provider being used
   version = "=2.4.0"
 
-  subscription_id = "528db867-aafd-4420-b517-2e2863ca7305"
+  subscription_id = "528db867-aafd-4420-b517-2e2863ca7305
   client_id       = "d2ee82e7-0f2a-40e3-ac32-c18f4b46dad3"
   client_secret   = "sZAD2ynOXzJP~4~i6HISVnkB5aKr~k-By6"
   tenant_id       = "8d894c2b-238f-490b-8dd1-d93898c5bf83"
@@ -24,7 +24,7 @@ provider "azurerm" {
 resource "azurerm_resource_group" "rg" {
     name                  =   "${var.prefix}-rg"
     location              =   var.location
-    tags                  =   var.author
+#   tags                  =   var.author
 }
 
 
@@ -61,7 +61,7 @@ resource "azurerm_virtual_network" "vnet" {
     resource_group_name   =   azurerm_resource_group.rg.name
     location              =   azurerm_resource_group.rg.location
     address_space         =   [var.vnet_address_range]
-    tags                  =   var.author
+ #   tags                  =   var.author
 }
 
 #
@@ -83,7 +83,7 @@ resource "azurerm_network_security_group" "nsg" {
     name                        =       "${var.prefix}-web-nsg"
     resource_group_name         =       azurerm_resource_group.rg.name
     location                    =       azurerm_resource_group.rg.location
-    tags                        =       var.author
+  #  tags                        =       var.author
 
     security_rule {
     name                        =       "Allow_SSH"
@@ -119,7 +119,7 @@ resource "azurerm_public_ip" "pip" {
     resource_group_name             =     azurerm_resource_group.rg.name
     location                        =     azurerm_resource_group.rg.location
     allocation_method               =     var.allocation_method[0]
-    tags                            =     var.author
+#    tags                            =     var.author
 }
 
 
@@ -197,6 +197,6 @@ resource "azurerm_linux_virtual_machine" "vm" {
         version                       =   var.vm_image_version
     }
 
-    tags                              =   var.author
+ #   tags                              =   var.author
 
 }
