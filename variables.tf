@@ -10,19 +10,6 @@ variable "prefix" {
     default     =   "dryrun"
 }
 
-#variable "author" {
- #   description =   "Resouce tags"
-  #  type        =   string
-   # default     =   "Rajesh"
-#}
-
-#variable "deployed_with" {
- #   description =   "Resouce tags"
-  #  type        =   string
-   # default     =   "Terraform"
-#}
-
-
 # Resource Group
 
 variable "location" {
