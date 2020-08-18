@@ -42,13 +42,13 @@ variable "platform_fault_domain_count" {
 
 variable "vnet_address_range" {
     description =   "IP Range of the virtual network"
-    type        =    string
+    type        =    list(string)
     default     =   ["10.0.0.0/16"]
 }
 
 variable "subnet_address_range" {
     description =   "IP Range of the virtual network"
-    type        =    string
+    type        =    list(string)
     default     =   ["10.0.1.0/24"]
 }
 
